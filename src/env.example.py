@@ -9,9 +9,9 @@ import platform
 
 BASE_URL = r'https://xxx.xxxxxx.com'
 PRO_BASE_URL = r'https://www.xxxxxx.com'
-CHROME_PATH = './Driver/DriverFile/chromedriver'
-
 ROOT_PATH = os.path.split(os.path.abspath(os.path.dirname(__file__)))[0]
+CHROME_PATH = ROOT_PATH+'/src/Driver/DriverFile/chromedriver'
+
 OS = 'macOS'
 DEBUG = False  # skip some foo
 LOCAL_BROWSER = 'Chrome'  # Chrome or Firefox

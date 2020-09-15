@@ -30,4 +30,6 @@ class BasePage:
 
 
 if __name__ == '__main__':
-	BasePage.get_url(driver=pc_browser())
+	driver = pc_browser()
+	BasePage.get_url(driver)
+	driver.quit()

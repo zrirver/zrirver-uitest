@@ -12,11 +12,14 @@ app = FlaskAPI(__name__)
 @app.route("/test", methods=['GET'])
 def url_test():
     if request.method == 'GET':
+        driver = pc_browser()
         try:
-           BasePage.get_url(driver=pc_browser())
+            BasePage.get_url(driver)
+            driver.quit()
+            return "test pass", status.HTTP_200_OK
         except Exception as e:
+            driver.quit()
             return e, status.HTTP_500_INTERNAL_SERVER_ERROR
-        return status.HTTP_201_CREATED
     else:
         return "Error Request Method"
 
